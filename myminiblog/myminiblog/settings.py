@@ -24,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4u1%etju^2q6w!(c6cb7z%cwgg41)u_im-%l#l)zj!1^gsjf80'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 IP = socket.gethostbyname_ex(socket.gethostname())[2][1]
 ALLOWED_HOSTS = [IP, 'localhost']
-print(IP)
+#print(IP)
 
 
 # Application definition
