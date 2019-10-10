@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Article list</h1>
+
+    {% if object_list %}
+    <ul>
+        {% for article in object_list %}
+        <li>
+            <a href="{{ article.get_absolute_url }}">{{article.title}}</a>({{ article.public_date }}) -- <a href="{% url 'author-detail' article.author.pk %}">{{article.author}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no blogs</p>
+    {% endif %}
+
+{% endblock %}
