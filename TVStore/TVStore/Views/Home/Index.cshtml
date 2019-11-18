@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TVStore.Models.TV>
+@{
+    //ViewData["Title"] = "Список телевизоров";
+    Layout = null;
+}
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <title>Магазин телевизоров</title>
+</head>
+<body>
+    <h3>Телевизоры</h3>
+    <table class="table-condensed">
+        <tr>
+            <td>Модель</td>
+            <td>Производитель</td>
+            <td>Цена</td>
+            <td></td>
+        </tr>
+        @foreach (var TV in Model)
+            {
+            <tr>
+                <td>@TV.Name</td>
+                <td>@TV.Company</td>
+                <td>@TV.Price</td>
+                <td><a href="~/Home/Buy/@TV.Id">Купить</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
